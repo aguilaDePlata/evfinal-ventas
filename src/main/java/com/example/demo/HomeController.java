@@ -29,6 +29,13 @@ public class HomeController {
 		return queryResult;
 	}
 
+	@GetMapping(path = "/api/facturacion")
+	public @ResponseBody List<Map <String, Object>> facturacion(){
+		String sql = "SELECT  Venta.id as id, Venta.numero as numero, Venta.total as total, producto.nombre as producto, ventadetalle.cantidad AS cantidad FROM Venta JOIN ventadetalle ON Venta.id = ventadetalle.id_venta JOIN producto ON producto.id = ventadetalle.id_producto";
+		List<Map <String, Object>> queryResult = jdbcTemplate.queryForList(sql);
+		return queryResult;
+	}
+
 	/**
 	 * 
 	 * 

@@ -10,10 +10,12 @@ const VerMusicoPage = require('./pages/ver-musico');
 const EditarInstrumentoPage = require('./pages/editar-instrumento');
 const VerBandaPage = require('./pages/ver-banda');
 const NuevoIntegrantePage = require('./pages/nuevo-integrante');
+const NuevaVentaPage = require('./pages/nueva-venta');
 
 
 const router = createBrowserRouter([
 	{ path: '/', element: <HomePage /> },
+	{ path: '/nueva-factura', element: <NuevaVentaPage /> },
 	{ path: '/ver-instrumento/:id', element: <VerInstrumentoPage /> },
 	{ path: '/nuevo-instrumento', element: <NuevoInstrumentoPage /> },
 	{ path: '/ver-musico/:id', element: <VerMusicoPage /> },

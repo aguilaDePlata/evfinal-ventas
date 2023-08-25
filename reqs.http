@@ -1,12 +1,33 @@
-@server = https://fictional-couscous-vgqvx74v6cv76-8080.app.github.dev
+@server = https://ubiquitous-fortnight-g44j565p464c95ww-8080.app.github.dev
 ###
-GET {{server}}/api/instrumentos/2
+GET {{server}}/api/ventas
 ###
-POST {{server}}/api/instrumentos
+POST {{server}}/api/ventas
 Content-Type: application/json
 
-{"nombre": "Quena", "categoria": "Viento", "descripcion": "Como una flauta"}
+{
+    "numero": "100-9009446677",
+    "subTotal": 90,
+    "impuesto": 10,
+    "total":100
+}
 ###
+GET {{server}}/api/ventaDetalles
+###
+POST {{server}}/api/ventaDetalles
+Content-Type: application/json
+
+{
+    "cantidad": 888,
+    "venta": "http://localhost:8080/api/ventas/1",
+    "producto": "http://localhost:8080/api/productos/1"
+}
+###
+GET {{server}}/api/productos
+###
+
+
+
 GET {{server}}/api/musicos
 ###
 POST {{server}}/api/musicos
